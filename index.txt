@@ -1,0 +1,3 @@
+vh->view port height meaning if we are watchin at a bigger screen then it is okay but if we are watching at a smaller screen for 100vh we get 100 % of view port height for smaller screen
+flex-box is a display property that allows us to move the elements much more faster and easier
+when we add display:flex and then justify-content:center it center the element
