@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* ::after creates a pseudo element that is the last child of the selected element */
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+        margin:0;
+        padding:20px;
+    background-color: #1a1a1a;
+    color:white;
+
+    }
+    .nav-container{
+        margin-bottom:40px;
+
+    }
+    h2{
+        margin-bottom: 10px;
+    }
+    .nav1{
+        /* border:2px solid red; */
+        background-color:#f7f9fa;
+        padding:10px;
+    }
+    .nav1 ul{/*Targeting ul descendents of nav1*/
+        list-style-type:none; /*Remove the dots in the li */
+        display:flex;/*Default behaviour of the flex box to line them left to right for desktop */
+        justify-content: space-around;/*Adds space */
+        margin: 0;
+        padding:10px;
+    }
+ .nav1 li{
+    display: inline;/*All the li are block level elements so it is a good thing that we make display as inline as they are in the same line */
+
+ }
+ .nav1 a{
+    text-decoration: none;
+    color: #202020;
+    /* background-color: #d45b04; */
+    padding :5px 15px;
+    position: relative;/*nav a::after will be absolute but relative to this*/
+
+ }
+ .nav1 .login-btn{
+   background-color: #254bf6;
+   color: #fff;
+   border: none;
+   padding:5px 15px;
+   border-radius: 5p;
+   cursor:pointer;/*Changes cursor style */
+ }
+ /* Now we target element of mouse hover */
+ .nav1 a::after{/*we want to put some elements after it*/
+ /* This after property absolutely need a content */
+ content:"";
+ position: absolute;/*absolute meaning we are telling it has to appear in this position absolutely*/
+ width: 100%;
+ height:2px;/*The content that is appearing is only 2px in height*/
+ bottom:0;
+ left:0;
+ /*We are saying that this abc will appear at the absolute bottom of it*/
+/* Our target is for some element to appear at the end of it and we want to change it's position */
+background-color: #0a65c7;
+transform:scaleY(0);/*Expands 0 to 2*/
+transition: transform 0.3s ease-in-out;;
+
+ }
+ .nav1 a:hover::after{
+  transform:scale(1);
+ }
+</style>
+<body>
+    <div class="nav-container">
+        <h2>Variation 1:Horizontal with underline effect</h2>
+        <nav class="nav1">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Products</a></li>
+                <li><button class="login-btn">Login</button></li>
+            </ul>
+        </nav>
+    </div>
+</body>
+</html>
